@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Prabhat Kumar"
 title_separator          : "-"
 name                     : &name "Prabhat Kumar"
-description              : &description "Ph.D Student, Department of Computational and Data Sciences, Indian Institute of Science"
+description              : &description "Research Engineer I - DL/Perception, Ola Electric"
 url                      : https://prabhatkumar95.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "prabhatkumar95/prabhatkumar95.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Prabhat Kumar"
   avatar           : "IMG_20200305_114755.jpg"
-  bio              : "Ph.D Student, Department of Computational and Data Sciences, Indian Institute of Science"
+  bio              : "Research Engineer I - DL/Perception, Ola Electric"
   location         : "Bangalore, India"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
