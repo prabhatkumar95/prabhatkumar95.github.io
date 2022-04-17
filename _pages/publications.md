@@ -10,6 +10,7 @@ author_profile: true
 <b>Prabhat Kumar</b>, Mayank Vatsa and Richa Singh.
 <i>The IEEE Winter Conference on Applications of Computer Vision</i>. <b>WACV 2020</b>.
 
+
 <br>
 <b>[SISL:Self-Supervised Image Signature Learning for Splicing Detection & Localization](https://arxiv.org/pdf/2203.07824.pdf)</b> <br> 
 Susmit Agarwal,<b>Prabhat Kumar</b>,Siddarth Seth,Toufiq Parag,Maneesh Singh,Venkatesh Babu.
