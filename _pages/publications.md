@@ -12,6 +12,6 @@ author_profile: true
 
 
 <br>
-<b>[SISL:Self-Supervised Image Signature Learning for Splicing Detection & Localization](https://arxiv.org/pdf/2203.07824.pdf)</b> <br> 
+<b>[SISL:Self-Supervised Image Signature Learning for Splicing Detection & Localization](https://openaccess.thecvf.com/content/CVPR2022W/WMF/papers/Agrawal_SISLSelf-Supervised_Image_Signature_Learning_for_Splicing_Detection__Localization_CVPRW_2022_paper.pdf)</b> <br> 
 Susmit Agrawal,<b>Prabhat Kumar</b>,Siddarth Seth,Toufiq Parag,Maneesh Singh,Venkatesh Babu.
 <i> WMF, Conference on Computer Vision and Pattern Recognition</i>. <b>CVPRW 2022</b>.
