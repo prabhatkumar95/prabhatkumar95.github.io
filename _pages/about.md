@@ -11,7 +11,7 @@ redirect_from:
 
 
 # About Me
-* I am a Research Engineer I - Deep Learning/Perception working in the area of ADAS and Self Driving at Ola Electric.
+* I am a Researcher - Computer Vision working at Bosch Corporate Resarch, India.
 * I was a Ph.D. Research Assistant in the [Video Analytics Lab](http://val.serc.iisc.ernet.in/valweb/), [Department of Computational and Data Sciences](http://cds.iisc.ac.in/) at [Indian Institute of Science](https://iisc.ac.in/), advised by Dr. [Venkatesh Babu](http://cds.iisc.ac.in/faculty/venky/).
 * My research interests lie in the general area of machine learning, particularly in deep learning with applications in the area of computer vison with concentration on genralised representation learning and low data applications.
 * I received my Bachelor’s Degree in Computer Science at [University of Delhi](http://www.du.ac.in/du/).
