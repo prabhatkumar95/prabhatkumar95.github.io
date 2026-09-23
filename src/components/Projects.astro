@@ -1,0 +1,96 @@
+---
+import { Cpu } from '@lucide/astro';
+import type { Project } from '../data/loader';
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section id="projects" class="py-16 sm:py-20 border-b border-zinc-200/60 dark:border-zinc-800/60">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <!-- Section Title -->
+    <div class="space-y-2 mb-12">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+        <Cpu class="w-4 h-4" />
+        <span>Shipped Systems & Research</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Applied AI & Production Architectures
+      </h2>
+      <p class="text-zinc-600 dark:text-zinc-400 max-w-2xl text-sm sm:text-base">
+        Selected machine learning architectures spanning multi-modal temporal reasoning, patented cross-camera perception, and edge-optimized robotics.
+      </p>
+    </div>
+
+    <!-- Project Cards Grid / Stack -->
+    <div class="space-y-8">
+      {projects.map((project) => (
+        <article class="group relative rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-900/60 p-6 sm:p-8 backdrop-blur-xs hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-200 shadow-xs hover:shadow-md">
+          <!-- Card Header -->
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4 mb-4">
+            <div>
+              <div class="flex items-center gap-2 text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wide">
+                <span>{project.org}</span>
+                <span class="text-zinc-300 dark:text-zinc-700">•</span>
+                <span class="text-zinc-500 font-normal">{project.period}</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-100 mt-1">
+                {project.title}
+              </h3>
+            </div>
+            {project.tagline && (
+              <span class="text-xs sm:text-sm font-medium text-zinc-500 dark:text-zinc-400 italic">
+                {project.tagline}
+              </span>
+            )}
+          </div>
+
+          <!-- Structured 3-Part Micro-Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-6 text-sm">
+            <!-- 1. Challenge -->
+            <div class="rounded-xl p-4 bg-zinc-50/80 dark:bg-zinc-950/50 border border-zinc-200/50 dark:border-zinc-800/50 space-y-2">
+              <span class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block">
+                The Challenge
+              </span>
+              <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+                {project.challenge}
+              </p>
+            </div>
+
+            <!-- 2. Architecture -->
+            <div class="rounded-xl p-4 bg-zinc-50/80 dark:bg-zinc-950/50 border border-zinc-200/50 dark:border-zinc-800/50 space-y-2">
+              <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider block">
+                Architecture & Method
+              </span>
+              <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+                {project.architecture}
+              </p>
+            </div>
+
+            <!-- 3. Scale & Impact -->
+            <div class="rounded-xl p-4 bg-zinc-50/80 dark:bg-zinc-950/50 border border-zinc-200/50 dark:border-zinc-800/50 space-y-2">
+              <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">
+                Scale & Impact
+              </span>
+              <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+                {project.impact}
+              </p>
+            </div>
+          </div>
+
+          <!-- Tech Stack Tags -->
+          <div class="flex flex-wrap items-center gap-1.5 pt-2">
+            {project.tags.map((tag) => (
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 border border-zinc-200/60 dark:border-zinc-700/60">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

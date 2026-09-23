@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Projects from '../components/Projects.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import PatentsPubs from '../components/PatentsPubs.astro';
+import Skills from '../components/Skills.astro';
+import BeyondCode from '../components/BeyondCode.astro';
+import Footer from '../components/Footer.astro';
+import { getProfileData } from '../data/loader';
+
+const data = getProfileData();
+---
+
+<Layout
+  title={`${data.personal.name} — Machine Learning Engineer & Researcher`}
+  description={data.personal.bio}
+  image={data.personal.avatar}
+>
+  <Navbar personal={data.personal} />
+  
+  <main>
+    <Hero personal={data.personal} />
+    <Projects projects={data.projects} />
+    <Experience experience={data.experience} />
+    <Education education={data.education} />
+    <PatentsPubs
+      patents={data.patents}
+      publications={data.publications}
+      scholarUrl={data.personal.scholar}
+    />
+    <Skills skills={data.skills} />
+    <BeyondCode beyond={data.beyond_the_code} />
+  </main>
+
+  <Footer personal={data.personal} />
+</Layout>

@@ -1,0 +1,78 @@
+---
+import { Mail, ArrowUpRight } from '@lucide/astro';
+import Github from './icons/Github.astro';
+import Linkedin from './icons/Linkedin.astro';
+import Scholar from './icons/Scholar.astro';
+import type { Personal } from '../data/loader';
+
+interface Props {
+  personal: Personal;
+}
+
+const { personal } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-16 bg-white dark:bg-zinc-950 border-t border-zinc-200/60 dark:border-zinc-800/60">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-zinc-200/60 dark:border-zinc-800/60">
+      <div class="space-y-3 max-w-lg">
+        <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+          Let's Connect
+        </h3>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          Interested in discussing machine learning architectures, multimodal video understanding, edge robotics perception, or potential opportunities? Feel free to reach out.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <a
+          href={`mailto:${personal.email}`}
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-indigo-600 text-white font-medium text-sm hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors shadow-xs"
+        >
+          <Mail class="w-4 h-4" />
+          <span>Say Hello</span>
+          <ArrowUpRight class="w-3.5 h-3.5 opacity-70" />
+        </a>
+
+        <div class="flex items-center gap-1">
+          <a
+            href={personal.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+            aria-label="GitHub"
+          >
+            <Github class="w-5 h-5" />
+          </a>
+          <a
+            href={personal.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin class="w-5 h-5" />
+          </a>
+          <a
+            href={personal.scholar}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+            aria-label="Google Scholar"
+          >
+            <Scholar class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom credits -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-500">
+      <p>© {currentYear} {personal.name}. All rights reserved.</p>
+      <p class="text-center sm:text-right">
+        Designed for performance & clarity • Built with Astro & Tailwind CSS
+      </p>
+    </div>
+  </div>
+</footer>

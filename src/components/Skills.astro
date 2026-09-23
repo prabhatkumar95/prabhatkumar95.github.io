@@ -1,0 +1,56 @@
+---
+import { Terminal, Code, Cpu } from '@lucide/astro';
+import type { Skills as SkillsType } from '../data/loader';
+
+interface Props {
+  skills: SkillsType;
+}
+
+const { skills } = Astro.props;
+---
+
+<section id="skills" class="py-16 sm:py-20 border-b border-zinc-200/60 dark:border-zinc-800/60">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="space-y-2 mb-10">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+        <Terminal class="w-4 h-4" />
+        <span>Technical Arsenal</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Skills & Technologies
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Core Research & ML Paradigms -->
+      <div class="rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white/60 dark:bg-zinc-900/50 p-6 backdrop-blur-xs">
+        <div class="flex items-center gap-2 mb-4 text-zinc-900 dark:text-zinc-100 font-bold text-base">
+          <Cpu class="w-4 h-4 text-indigo-500" />
+          <h3>Core Research & Modeling</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {skills.research.map((item) => (
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200/60 dark:border-zinc-700/60">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Languages, Frameworks & Infrastructure -->
+      <div class="rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white/60 dark:bg-zinc-900/50 p-6 backdrop-blur-xs">
+        <div class="flex items-center gap-2 mb-4 text-zinc-900 dark:text-zinc-100 font-bold text-base">
+          <Code class="w-4 h-4 text-emerald-500" />
+          <h3>Languages, Frameworks & Edge</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {skills.engineering.map((item) => (
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200/60 dark:border-zinc-700/60">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

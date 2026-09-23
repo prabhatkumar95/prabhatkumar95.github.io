@@ -1,0 +1,75 @@
+---
+import { FileText, Sun, Moon } from '@lucide/astro';
+import type { Personal } from '../data/loader';
+
+interface Props {
+  personal: Personal;
+}
+
+const { personal } = Astro.props;
+---
+
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-zinc-50/80 dark:bg-zinc-950/80 border-b border-zinc-200/60 dark:border-zinc-800/60 transition-colors">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <!-- Brand / Name -->
+    <a href="#top" class="group flex items-center gap-2 font-medium text-zinc-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+      <span class="w-8 h-8 rounded-lg bg-indigo-600/10 text-indigo-600 dark:bg-indigo-500/15 dark:text-indigo-400 flex items-center justify-center font-bold text-sm tracking-wider">
+        PK
+      </span>
+      <span class="font-semibold tracking-tight">{personal.name}</span>
+    </a>
+
+    <!-- Nav Links (Desktop) -->
+    <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-600 dark:text-zinc-400 font-medium">
+      <a href="#projects" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Projects</a>
+      <a href="#experience" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Experience</a>
+      <a href="#education" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Education</a>
+      <a href="#research" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Patents & Papers</a>
+      <a href="#about" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">About</a>
+    </nav>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-3">
+      {personal.status?.available && (
+        <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400 border border-emerald-500/20" title={personal.status.details}>
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>{personal.status.label}</span>
+        </div>
+      )}
+
+      <!-- Resume Download Button -->
+      <a
+        href={personal.resume_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors shadow-xs"
+        aria-label="View and download Prabhat Kumar's Resume"
+      >
+        <FileText class="w-3.5 h-3.5" />
+        <span>Resume</span>
+      </a>
+
+      <!-- Theme Toggle -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+        aria-label="Toggle dark/light theme"
+      >
+        <Sun class="w-4 h-4 hidden dark:block" />
+        <Moon class="w-4 h-4 block dark:hidden" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>

@@ -1,0 +1,165 @@
+personal:
+  name: "Prabhat Kumar"
+  headline: "Machine Learning Engineer @ Roku • Former Researcher @ Bosch"
+  bio: "Machine Learning Engineer & Researcher with 7+ years of experience across Computer Vision, Multi-modal Foundation Models, and Temporal Sequence Modeling. Passionate about bridging theoretical algorithmic formulation with robust, production-scale AI systems."
+  avatar: "/images/IMG_20200305_114755.jpg"
+  resume_url: "/resume.pdf"
+  location: "Bengaluru, India"
+  email: "prabhat6180@gmail.com"
+  github: "https://github.com/prabhatkumar95"
+  linkedin: "https://linkedin.com/in/prabhat-kr"
+  scholar: "https://scholar.google.com/citations?user=vBzu27MAAAAJ"
+  status:
+    available: true
+    label: "Open to relocation & global opportunities"
+    regions: "EU / Germany & Japan"
+    details: "Experienced collaborating across North America, Europe, and Asia. Eligible for German EU Blue Card (Anabin H+ recognized Master's) and Japan HSP Visa."
+
+projects:
+  - id: "roku-video-mamba"
+    title: "Multi-Modal Video Architecture & Temporal Modeling"
+    org: "Roku"
+    period: "Dec 2025 – Present"
+    tagline: "Scalable Long-Context Video Modeling & Boundary Localization"
+    challenge: "Long-form multi-modal scene break detection requiring high-throughput boundary localization across asynchronous video, audio, and subtitle streams where standard Transformers encounter quadratic memory scaling ($O(N^2)$)."
+    architecture: "Benchmarked linear-complexity State-Space Models (Mamba) and Graph Convolutional Networks (GCNs) against standard Transformers. Engineered self-supervised proxy tasks aligning visual (DINO), textual, and acoustic embeddings for precise boundary localization."
+    impact: "Scaled distributed feature extraction and validation across ultra-long video datasets using Ray, cutting processing bottlenecks and enabling localized structural reasoning."
+    tags: ["PyTorch", "Ray", "State-Space Models (Mamba)", "DINO", "Transformers", "GCNs", "Distributed Scale"]
+
+  - id: "bosch-zero-shot"
+    title: "Zero-Shot Perception Transfer & Cross-Camera Flow"
+    org: "Bosch Research"
+    period: "2022 – 2025"
+    tagline: "Unsupervised Sensor Transfer & Dual-Level Domain Adaptation"
+    challenge: "Sensor recalibration and domain drift across heterogeneous multi-sensor vehicle and industrial cameras without expensive manual ground-truth annotation."
+    architecture: "Coupled a UNIT-GAN translation network with a FlowFormer optical flow backbone to warp visual representations across pixel and latent feature levels, maximizing cross-domain geometric consistency."
+    impact: "Enabled unsupervised model and label transfer across heterogeneous sensors; directly produced 3 Published Patents (1 US Patent, 2 Indian Patents) in cross-camera vision."
+    tags: ["Computer Vision", "FlowFormer", "UNIT-GAN", "Domain Adaptation", "PyTorch", "3 Published Patents"]
+
+  - id: "ola-edge-ai"
+    title: "Low-Latency Autonomous Systems & Multi-Task Edge AI"
+    org: "Ola Electric"
+    period: "2021 – 2022"
+    tagline: "Real-Time Embedded Multi-Task Perception on Robotic Hardware"
+    challenge: "Joint perception for unstructured road environments under strict compute, memory, and millisecond latency constraints on embedded automotive hardware."
+    architecture: "Engineered a unified multi-task deep network for simultaneous semantic segmentation and depth estimation trained with hybrid supervised and self-supervised geometric constraints."
+    impact: "Accelerated execution via TensorRT running within an onboard ROS/ROS2 robotics environment under sub-millisecond real-time constraints."
+    tags: ["C++", "ROS/ROS2", "TensorRT", "Edge AI", "Multi-Task Learning", "Semantic Segmentation", "Depth Estimation"]
+
+experience:
+  - company: "Roku"
+    role: "Software Engineer, Machine Learning"
+    period: "Dec 2025 – Present"
+    location: "Bengaluru, India"
+    summary: "Leading research and engineering in multi-modal video understanding architectures."
+    bullets:
+      - "Researched multi-modal Scene Break Detection, scaling temporal sequence modeling by benchmarking linear-complexity State-Space Models (Mamba) and GCNs against standard Transformers."
+      - "Formulated self-supervised proxy tasks to align asynchronous cross-modal representations from visual (DINO), textual (Sentence Transformers), and acoustic foundation models for precise boundary localization."
+      - "Scaled distributed feature extraction and experimental validation across ultra-long-form video datasets using Ray, enabling high-throughput parallel processing and localized structural reasoning."
+
+  - company: "Bosch Research / BGSW"
+    role: "Researcher / Tech Lead & R&D Specialist"
+    period: "Oct 2022 – Nov 2025"
+    location: "Bengaluru, India"
+    summary: "Promoted to Tech Lead (Jul 2025); served as R&D Specialist (Oct 2022 – Jun 2025) driving autonomous perception."
+    bullets:
+      - "Developed unsupervised cross-camera optical flow estimation by coupling a UNIT-GAN translation network with a FlowFormer backbone, enabling zero-shot model and label transfer across heterogeneous sensors."
+      - "Formulated dual-level domain adaptation objectives using predicted dense flow fields to warp visual representations at both pixel and latent feature levels, maximizing cross-domain geometric consistency."
+      - "Leveraged flow-based feature alignment to jointly regularize and improve representation capacity across source and target camera perception networks, resulting in 3 published patents."
+
+  - company: "Ola Electric"
+    role: "Research Engineer I"
+    period: "Jul 2021 – Sep 2022"
+    location: "Bengaluru, India"
+    summary: "Developed onboard computer vision and multi-task learning for robotic perception."
+    bullets:
+      - "Developed a unified multi-task network for joint Semantic Segmentation and Depth Estimation tailored for unstructured road environments using hybrid supervised and self-supervised training."
+      - "Implemented domain adaptation pipelines and novel geometric and photometric data augmentations to minimize feature degradation against severe out-of-distribution driving conditions."
+      - "Evaluated model efficiency and real-world inference constraints by adapting neural architectures for low-latency execution via TensorRT within an onboard ROS robotics environment."
+
+  - company: "IISc & IIT Jodhpur"
+    role: "Student Researcher"
+    period: "Aug 2018 – Jun 2021"
+    location: "Bengaluru & Delhi, India"
+    summary: "Foundational academic research in self-supervised representation learning and deepfake forensics."
+    bullets:
+      - "Indian Institute of Science (IISc): Formulated a self-supervised representation learning framework (SISL) to decouple content-independent camera signatures from image patches, training an anomaly localization network to identify splicing boundaries without pixel-level ground truth."
+      - "IIT Jodhpur: Developed a multi-stream deep neural network to isolate regional artifacts and spatial-temporal texture distortions from facial reenactment pipelines, mapping model robustness across progressive video compression codecs (published in WACV 2020)."
+
+education:
+  - degree: "M.Tech in Computer Science & Engineering (Data Engineering)"
+    institution: "Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)"
+    period: "2017 – 2019"
+    note: "Recognized institution (Anabin H+ accredited). Meets international equivalence standards for German EU Blue Card and Japan HSP."
+  - degree: "Graduate Studies, Computer Vision & Deep Learning"
+    institution: "Indian Institute of Science (IISc)"
+    period: "2019 – 2021"
+    note: "Research at Video Analytics Lab, advised by Dr. Venkatesh Babu."
+  - degree: "B.Tech in Computer Science & Engineering"
+    institution: "University of Delhi"
+    period: "2013 – 2017"
+
+patents:
+  - title: "System for Translation of Images Between Two Distinct Heterogeneous Cameras..."
+    jurisdiction: "US Patent"
+    status: "Published"
+    year: "2025"
+    assignee: "Bosch Research"
+    url: ""
+  - title: "Method and System for Cross-Camera Sensor Perception and Representation Transfer"
+    jurisdiction: "Indian Patent"
+    status: "Published"
+    year: "2025"
+    assignee: "Bosch Research"
+    url: ""
+  - title: "Cross-Domain Feature Alignment for Multi-Sensor Vision Pipelines"
+    jurisdiction: "Indian Patent"
+    status: "Published"
+    year: "2025"
+    assignee: "Bosch Research"
+    url: ""
+
+publications:
+  - title: "SISL: Self-Supervised Image Signature Learning for Splicing Detection & Localization"
+    authors: "Susmit Agrawal, Prabhat Kumar, Siddarth Seth, Toufiq Parag, Maneesh Singh, Venkatesh Babu"
+    venue: "CVPR Workshops (WMF)"
+    year: "2022"
+    url: "https://openaccess.thecvf.com/content/CVPR2022W/WMF/papers/Agrawal_SISLSelf-Supervised_Image_Signature_Learning_for_Splicing_Detection__Localization_CVPRW_2022_paper.pdf"
+  - title: "Detecting Face2Face Facial Reenactment in Videos"
+    authors: "Prabhat Kumar, Mayank Vatsa, Richa Singh"
+    venue: "IEEE Winter Conference on Applications of Computer Vision (WACV)"
+    year: "2020"
+    url: "https://openaccess.thecvf.com/content_WACV_2020/papers/Kumar_Detecting_Face2Face_Facial_Reenactment_in_Videos_WACV_2020_paper.pdf"
+
+skills:
+  research:
+    - "Model Architecture Design"
+    - "Generative AI"
+    - "Foundation Models"
+    - "Multi-modal Alignment"
+    - "Temporal Sequence Modeling"
+    - "Optical Flow"
+    - "Self-Supervised Learning"
+    - "Unsupervised Domain Adaptation"
+    - "Multi-Task Optimization"
+    - "Graph Neural Networks (GCNs)"
+  engineering:
+    - "Python"
+    - "C++"
+    - "PyTorch"
+    - "Ray"
+    - "TensorRT"
+    - "ROS / ROS 2"
+    - "Distributed Training"
+    - "OpenCV"
+    - "CUDA"
+    - "Git / CI/CD"
+
+beyond_the_code:
+  text: "Outside of algorithmic research and systems modeling, I thrive in collaborative, multi-cultural engineering teams. Having delivered across distributed teams in the US, Europe, and India, and having explored tech ecosystems firsthand in Berlin and Tokyo, I appreciate environments that combine technical rigor with clear, empathetic communication."
+  travel_familiarity: "Firsthand familiarity with Berlin & Tokyo tech and cultural ecosystems."
+  languages:
+    - name: "English"
+      level: "Full Professional / Fluent"
+    - name: "German & Japanese"
+      level: "Active interest & beginning studies"

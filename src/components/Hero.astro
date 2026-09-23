@@ -1,0 +1,156 @@
+---
+import { Mail, Copy, Check, FileDown, Award, MapPin } from '@lucide/astro';
+import Github from './icons/Github.astro';
+import Linkedin from './icons/Linkedin.astro';
+import Scholar from './icons/Scholar.astro';
+import type { Personal } from '../data/loader';
+
+interface Props {
+  personal: Personal;
+}
+
+const { personal } = Astro.props;
+---
+
+<section id="top" class="pt-12 sm:pt-20 pb-12 sm:pb-16 border-b border-zinc-200/60 dark:border-zinc-800/60">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-8 md:gap-12">
+      <!-- Left Content -->
+      <div class="flex-1 space-y-5">
+        <!-- Sub-headline Pill / Location -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/60">
+          <MapPin class="w-3.5 h-3.5 text-zinc-500" />
+          <span>{personal.location}</span>
+          <span class="text-zinc-400 dark:text-zinc-600">•</span>
+          <span class="text-indigo-600 dark:text-indigo-400 font-medium">7+ YOE in AI / ML</span>
+        </div>
+
+        <!-- Headline & Name -->
+        <div class="space-y-2">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
+            {personal.name}
+          </h1>
+          <p class="text-lg sm:text-xl font-medium text-indigo-600 dark:text-indigo-400 leading-snug">
+            {personal.headline}
+          </p>
+        </div>
+
+        <!-- Bio narrative -->
+        <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl font-normal">
+          {personal.bio}
+        </p>
+
+        <!-- Key Accolade Badges -->
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-amber-500/10 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300 border border-amber-500/20">
+            <Award class="w-3.5 h-3.5" />
+            <span>3 Published Patents (1 US, 2 IN)</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
+            <span>🇪🇺 EU Blue Card Ready (Anabin H+)</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
+            <span>🇯🇵 Japan HSP Eligible</span>
+          </span>
+        </div>
+
+        <!-- Fast Actions & Socials -->
+        <div class="flex flex-wrap items-center gap-3 pt-3">
+          <!-- Resume Button -->
+          <a
+            href={personal.resume_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors shadow-xs"
+          >
+            <FileDown class="w-4 h-4" />
+            <span>Download CV</span>
+          </a>
+
+          <!-- Copy Email Button -->
+          <button
+            id="copy-email-btn"
+            type="button"
+            data-email={personal.email}
+            class="group inline-flex items-center gap-2 px-3.5 py-2 text-sm font-medium rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 transition-colors cursor-pointer"
+          >
+            <Mail class="w-4 h-4 text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-white" />
+            <span id="copy-email-text">{personal.email}</span>
+            <Copy id="copy-icon" class="w-3.5 h-3.5 text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-200 ml-1" />
+            <Check id="check-icon" class="w-3.5 h-3.5 text-emerald-500 hidden ml-1" />
+          </button>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-1 pl-1">
+            <a
+              href={personal.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              aria-label="GitHub Profile"
+            >
+              <Github class="w-5 h-5" />
+            </a>
+            <a
+              href={personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              aria-label="LinkedIn Profile"
+            >
+              <Linkedin class="w-5 h-5" />
+            </a>
+            <a
+              href={personal.scholar}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              aria-label="Google Scholar Profile"
+            >
+              <Scholar class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Portrait / Avatar -->
+      <div class="relative shrink-0">
+        <div class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden border-2 border-zinc-200 dark:border-zinc-800 shadow-xl bg-zinc-100 dark:bg-zinc-900">
+          <img
+            src={personal.avatar}
+            alt={personal.name}
+            class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-300"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const copyBtn = document.getElementById('copy-email-btn');
+  const copyText = document.getElementById('copy-email-text');
+  const copyIcon = document.getElementById('copy-icon');
+  const checkIcon = document.getElementById('check-icon');
+
+  copyBtn?.addEventListener('click', async () => {
+    const email = copyBtn.getAttribute('data-email');
+    if (!email) return;
+
+    try {
+      await navigator.clipboard.writeText(email);
+      if (copyText) copyText.textContent = "Copied to clipboard!";
+      copyIcon?.classList.add('hidden');
+      checkIcon?.classList.remove('hidden');
+
+      setTimeout(() => {
+        if (copyText) copyText.textContent = email;
+        copyIcon?.classList.remove('hidden');
+        checkIcon?.classList.add('hidden');
+      }, 2000);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  });
+</script>
