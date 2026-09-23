@@ -101,7 +101,7 @@ education:
 
 patents:
   - title: "System for Translation of Images Between Two Distinct Heterogeneous Cameras..."
-    jurisdiction: "US,IND,DE"
+    jurisdiction: ["US","IND","DE"]
     status: "Published"
     year: "2025"
     assignee: "Bosch Research"
