@@ -51,12 +51,26 @@ export interface Education {
 
 export interface Patent {
   title: string;
-  jurisdiction: string;
+  jurisdiction?: string | string[];
+  jurisdictions?: string[];
   status: string;
   year: string;
   assignee: string;
   patent_number?: string;
   url?: string;
+}
+
+export function getPatentJurisdictions(patent: Patent): string[] {
+  if (patent.jurisdictions && Array.isArray(patent.jurisdictions) && patent.jurisdictions.length > 0) {
+    return patent.jurisdictions;
+  }
+  if (patent.jurisdiction) {
+    if (Array.isArray(patent.jurisdiction)) {
+      return patent.jurisdiction;
+    }
+    return [patent.jurisdiction];
+  }
+  return [];
 }
 
 export interface Publication {
