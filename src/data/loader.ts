@@ -55,6 +55,7 @@ export interface Patent {
   status: string;
   year: string;
   assignee: string;
+  patent_number?: string;
   url?: string;
 }
 

@@ -43,7 +43,7 @@ const { patents, publications, scholarUrl } = Astro.props;
             <div class="rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white/60 dark:bg-zinc-900/50 p-4 backdrop-blur-xs hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
               <div class="flex items-start justify-between gap-3">
                 <div>
-                  <div class="flex items-center gap-2 mb-1.5">
+                  <div class="flex items-center gap-2 mb-1.5 flex-wrap">
                     <span class={`px-2 py-0.5 rounded text-[11px] font-semibold tracking-wide ${
                       patent.jurisdiction.includes('US')
                         ? 'bg-blue-500/10 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300 border border-blue-500/20'
@@ -52,6 +52,9 @@ const { patents, publications, scholarUrl } = Astro.props;
                       {patent.jurisdiction}
                     </span>
                     <span class="text-xs text-zinc-500 font-medium">Published {patent.year}</span>
+                    {patent.patent_number && (
+                      <span class="text-xs text-zinc-400 dark:text-zinc-500 font-mono">({patent.patent_number})</span>
+                    )}
                   </div>
                   <h4 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 leading-snug">
                     {patent.title}
